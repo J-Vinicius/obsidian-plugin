@@ -139,7 +139,7 @@ class CodeInputModal extends Modal {
 		input.setAttr("placeholder", "Enter URL...");
 		input.setAttr("type", "text");
 
-		const submitButton = contentEl.createEl("button", { text: "Submit" });
+		const submitButton = contentEl.createEl("button", { text: "Download" });
 		submitButton.addEventListener("click", () => {
 			const userInput = input.value;
 			if (!userInput) {
