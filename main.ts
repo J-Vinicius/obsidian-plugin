@@ -12,18 +12,15 @@ interface ApiResponse {
 
 async function getIdFromHash(url: string): Promise<number | null> {
 	// Regex to extract hash and random number from URL
-	const regex =
-		/samples\/(\d{1,4})\/sample_([a-fA-F0-9]{32})\.(jpg|png|jpeg|gif)/;
+	const regex = /\/(samples|images)\/(\d{1,4})\/(?:sample_)?([a-fA-F0-9]{32})\.(jpg|png|jpeg|gif)/;
+
 	const match = url.match(regex);
 
 	if (!match) {
 		throw new Error("Invalid URL format");
 	}
+	const hash = match[3];
 
-	const randomNumber = match[1];
-	const hash = match[2];
-
-	console.log(`Random Number: ${randomNumber}`);
 	console.log(`Hash: ${hash}`);
 
 	// Construct the API URL
