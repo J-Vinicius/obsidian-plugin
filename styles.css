@@ -1,5 +1,9 @@
-input {
+.r34__div {
 	display: flex;
-	margin-top: .5rem;
-	margin-bottom: .5rem;
+	margin-top: 1rem;
+	gap: 0.5rem;
+}
+
+.r34__div > input {
+	flex: 1 1 0%;
 }

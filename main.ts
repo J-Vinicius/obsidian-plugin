@@ -12,7 +12,8 @@ interface ApiResponse {
 
 async function getIdFromHash(url: string): Promise<number | null> {
 	// Regex to extract hash and random number from URL
-	const regex = /samples\/(\d{1,4})\/sample_([a-fA-F0-9]{32})\.(jpg|png|jpeg|gif)/;
+	const regex =
+		/samples\/(\d{1,4})\/sample_([a-fA-F0-9]{32})\.(jpg|png|jpeg|gif)/;
 	const match = url.match(regex);
 
 	if (!match) {
@@ -135,11 +136,12 @@ class CodeInputModal extends Modal {
 			text: "The plugin doesn't accept URLs of mp4 links. Only images like png, jpg, jpeg, and gifs",
 		});
 
-		const input = contentEl.createEl("input");
+		const divInput = contentEl.createEl("div", { cls: "r34__div" });
+		const input = divInput.createEl("input");
 		input.setAttr("placeholder", "Enter URL...");
 		input.setAttr("type", "text");
 
-		const submitButton = contentEl.createEl("button", { text: "Download" });
+		const submitButton = divInput.createEl("button", { text: "Download" });
 		submitButton.addEventListener("click", () => {
 			const userInput = input.value;
 			if (!userInput) {
