@@ -1,7 +1,7 @@
 {
 	"id": "r34-downloader",
 	"name": "Rule34 Downloader",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"minAppVersion": "0.15.0",
 	"description": "This plugin downloader images, like png, jpg, jpeg, and gifs from r34.app, rule 34.",
 	"author": "Jorge Vinicius",
